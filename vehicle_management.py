@@ -29,7 +29,11 @@ def map_user_input(user_input: int):
         except ValueError:
             print("Wrong input.")
     elif user_input == 3:
-        print_inventory()
+        if len(db) < 1:
+            print("Your inventory is empty.")
+        else:
+            print_inventory()
+        print()
     elif user_input == 4:
         try:
             update_vehicle(*take_user_update_vehicle_input())
